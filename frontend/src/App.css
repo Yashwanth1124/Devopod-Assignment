@@ -2,11 +2,14 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #f0f2f5;
+  color: #333;
 }
 
 .app-container {
   text-align: center;
   padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 header {
@@ -14,6 +17,7 @@ header {
   color: white;
   padding: 20px;
   border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 header h1 {
@@ -27,17 +31,17 @@ nav ul {
   margin: 20px 0 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav ul li {
-  margin: 0 10px;
+  margin: 10px;
 }
 
 .nav-button {
   display: inline-block;
   padding: 10px 20px;
-  margin: 5px;
-  font-size: 1.6em;
+  font-size: 1em;
   color: white;
   background-color: #2c99a6;
   border: none;
@@ -69,6 +73,6 @@ main {
 
   .nav-button {
     padding: 8px 16px;
-    font-size: 0.7em;
+    font-size: 0.9em;
   }
 }

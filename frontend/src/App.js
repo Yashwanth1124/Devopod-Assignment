@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
@@ -19,14 +19,14 @@ const App = () => {
           <nav>
             <ul>
               <li>
-                <Link to="/register" className='nav-button'>Register</Link>
+                <Link to="/register" className="nav-button">Register</Link>
               </li>
               <li>
-                <Link to="/login" className='nav-button'>Login</Link>
+                <Link to="/login" className="nav-button">Login</Link>
               </li>
               {isLoggedIn() && (
                 <li>
-                  <Link to="/dashboard" className='nav-button'>Dashboard</Link>
+                  <Link to="/dashboard" className="nav-button">Dashboard</Link>
                 </li>
               )}
             </ul>
@@ -34,11 +34,11 @@ const App = () => {
         </header>
         
         <main>
-          {/* Routes for different pages */}
           <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={isLoggedIn() ? <Dashboard /> : <Login />} />
+            <Route path="/dashboard" element={isLoggedIn() ? <Dashboard /> : <Navigate to="/login" />} />
           </Routes>
         </main>
       </div>
