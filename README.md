@@ -1,4 +1,4 @@
-### Custom ERP System Development with AI Integration
+### Custom ERP System Development
 
 #### Introduction
 The objective of this project is to develop a custom Enterprise Resource Planning (ERP) system tailored for industries such as construction, retail, and manufacturing. The system incorporates AI features to automate data entry and provide predictive insights, enhancing efficiency and decision-making. This documentation focuses on the "User Accounts Management and Role-Based Access Control (RBAC)" module to ensure secure and efficient management of user accounts and roles.
