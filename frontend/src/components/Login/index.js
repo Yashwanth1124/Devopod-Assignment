@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';  // Import the useNavigate hook
+import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../../services/api';
 import './index.css';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [message, setMessage] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,12 +16,14 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log('Logging in with:', formData); // Debugging log
       const res = await login(formData);
-      console.log('Token:', res.data.token);
-      localStorage.setItem('token', res.data.token);  // Store token in localStorage
+      console.log('Login response:', res); // Debugging log
+      localStorage.setItem('token', res.data.token);
       setMessage('Login successful!');
-      navigate('/dashboard');  // Redirect to dashboard after successful login
+      navigate('/dashboard');
     } catch (error) {
+      console.error('Login error:', error); // Debugging log
       setMessage(error.response?.data?.message || 'Error logging in');
     }
   };
