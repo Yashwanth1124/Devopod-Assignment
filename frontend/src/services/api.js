@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// Create an axios instance with a base URL from environment variable
+// Create an axios instance with a base URL
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL, // Use the environment variable for backend API URL
+  baseURL: 'https://devopod-assignment.onrender.com/api', // Replace with your backend API URL
 });
 
 // Add a token to every request if available
@@ -11,7 +11,7 @@ API.interceptors.request.use(
     const token = localStorage.getItem('token'); // Get the token from localStorage
     if (token) {
       req.headers.Authorization = `Bearer ${token}`; 
-      console.log('Token in request:', req.headers.Authorization); // Correct format for Authorization header
+      console.log('Token in request:', req.headers.Authorization);// Correct format for Authorization header
     }
     return req;
   },
@@ -32,6 +32,8 @@ export const login = (data) => {
 };
 
 // Fetch protected data (test route in this case)
+// Fetch protected data (test route in this case)
 export const fetchProtected = () => {
   return API.get('/protected'); // Corrected endpoint
 };
+
