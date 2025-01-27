@@ -23,11 +23,9 @@ const App = () => {
               <li>
                 <Link to="/login" className="nav-button">Login</Link>
               </li>
-              {isLoggedIn() && (
-                <li>
+              <li>
                   <Link to="/dashboard" className="nav-button">Dashboard</Link>
                 </li>
-              )}
             </ul>
           </nav>
         </header>
